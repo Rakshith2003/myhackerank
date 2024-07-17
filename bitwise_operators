@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.
+void calculate_the_maximum(int n, int k)
+{
+  //Write your code here.
+int max_and=0,max_or=0,max_xor=0;
+int temp_and,temp_or,temp_xor,i,j;
+for(i=1;i<=n;i++)                                //i satrts from 1 and iterates for n value provided by user
+{
+ for(j=i+1;j<=n;j++)                             //j value should be more then i value ,cannot be same as i value ,also it should iterate for n times
+  {
+    temp_and=i&j;                                //Bitwise operation
+    temp_or=i|j;
+    temp_xor=i^j;
+    if(temp_and>max_and&&temp_and<k)             //logical and comparision ,here it checks value obatined from bitwise AND is maximum or not ,also it's less then the threshold value (i.e k)
+    {
+       max_and=temp_and;
+    }
+    if(temp_or>max_or&&temp_or<k)
+    {
+       max_or=temp_or;
+    }
+    if(temp_xor>max_xor&&temp_xor<k)
+    {
+       max_xor=temp_xor;
+    }     
+  }
+ }
+  printf("%d\n%d\n%d\n",max_and,max_or,max_xor); //prints maximum value obtained from bitwise and ,or and xor operation
+}
+int main() 
+{
+    int n, k;
+    scanf("%d %d", &n, &k);
+    calculate_the_maximum(n, k);
+    return 0;
+}
