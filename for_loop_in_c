@@ -1,0 +1,70 @@
+//code to print english representation of a number in lower case(eg: 2="two",8="eight")
+//it should print numbers between 1 to 9, if more then 9 then it  should print the number is odd or even
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main() 
+{
+    int a, b,i;
+    scanf("%d\n%d", &a, &b);
+  	// Complete the code.
+for(i=a;i<=b;i++)
+  {
+      if(i<10)
+      {
+      if(i==1)
+      {
+          printf("one\n");
+      }
+      else if(i==2)
+      {
+          printf("two\n");
+      }
+      else if(i==3)
+      {
+          printf("three\n");
+      }
+     else if(i==4)
+      {
+          printf("four\n");
+      }
+      else if(i==5)
+      {
+          printf("five\n");
+      }
+      else if(i==6)
+      {
+          printf("six\n");
+      }
+      else if(i==7)
+      {
+          printf("seven\n");
+      }
+     else if(i==8)
+      {
+          printf("eight\n");
+      }
+      else if(i==9)
+      {
+          printf("nine\n");
+      }
+      }
+      if(i>=10)
+      {
+      if(i%2==0)
+      {
+          printf("even\n");
+      }
+      else
+      {
+          printf("odd\n");
+      }
+      }
+  }
+    return 0;
+}
+
