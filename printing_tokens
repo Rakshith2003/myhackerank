@@ -1,0 +1,30 @@
+//printing token
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+char *s = malloc(1024 * sizeof(char));
+if (s == NULL)
+{
+fprintf(stderr, "Memory allocation failed\n");
+return 1;
+}
+scanf("%[^\n]", s);
+s=realloc(s, strlen(s) + 1);
+if (s == NULL) 
+{
+fprintf(stderr, "Memory reallocation failed\n");
+return 1;
+}
+for (char *c = s; *c != '\0'; c++)
+{
+if (*c == ' ')
+{
+*c = '\n';
+}
+}
+printf("%s", s);
+free(s);
+return 0;
+}
